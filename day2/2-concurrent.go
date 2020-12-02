@@ -34,13 +34,13 @@ func isValidPassword(line string, reg *regexp.Regexp) (bool) {
 	matchArr := reg.FindStringSubmatch(line)
 	firstIndex := toInt(matchArr[1]) - 1 // -1 because input is 1-indexed but strings are 0-indexed
 	secondIndex := toInt(matchArr[2]) - 1
-	char := matchArr[3]
+	char := []byte(matchArr[3])[0] // convert to byte so that it can be compared to the string index
 	pw := matchArr[4]
 	matches := 0
-	if string(pw[firstIndex]) == char {
+	if pw[firstIndex] == char {
 		matches += 1
 	}
-	if string(pw[secondIndex]) == char {
+	if pw[secondIndex] == char {
 		matches += 1
 	}
 	return matches == 1 // only 1 char should match, not 0 or 2
