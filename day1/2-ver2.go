@@ -1,3 +1,5 @@
+// Same algorithm as last version, but this one reads numbers from a file
+
 package main
 
 import (
