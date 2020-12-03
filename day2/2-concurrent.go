@@ -1,4 +1,7 @@
 // Re-implementation of 2.go using concurrency
+// Turns out this isn't any faster in practice than single-threaded solution.
+// The overhead of launching goroutines cancels out the benefit of multiple threads.
+// Each "chunk" of work needs to be bigger to realize the benefit.
 
 package main
 
