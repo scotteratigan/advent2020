@@ -18,8 +18,7 @@ import (
 func main() {
 	var validPassCount uint64
 	var wg sync.WaitGroup
-	lines := readFileIntoStrArr("p2.txt", "\n")
-	// lines := readFileIntoStrArr("passwords.txt", "\n")
+	lines := readFileIntoStrArr("passwords.txt", "\n")
 	numLines := len(lines)
 	numSlices := 8
 	perSlice := numLines / (numSlices - 1) // minus 1 because of the remainder
