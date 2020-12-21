@@ -22,7 +22,7 @@ func main() {
 	fullRegex := regexp.MustCompile(`^(\d+)-(\d+) (\w): (\w+)$`)
 	for _, line := range lines {
 		if isValidPassword(line, fullRegex) {
-			validPassCount += 1
+			validPassCount++
 		}
 	}
 	fmt.Println("Valid passwords:", validPassCount)
